@@ -58,4 +58,28 @@
 }
 .thumbs{
     width: 30%;
+    display: flex;
+    position: relative;
+}
+
+.prev{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.next{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.prev i,
+.next i{
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
 }
