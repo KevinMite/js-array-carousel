@@ -55,6 +55,14 @@
 
 .items .item{
     width: 100%;
+    opacity: 0;
+    display: none;
+}
+
+.items .item.active{
+    /* width: 100%; */
+    opacity: 1;
+    display: block;
 }
 .thumbs{
     width: 30%;
@@ -67,6 +75,7 @@
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1;
 }
 
 .next{
@@ -74,6 +83,7 @@
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1;
 }
 
 .prev i,

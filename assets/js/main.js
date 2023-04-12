@@ -13,3 +13,58 @@
 // BONUS 2:
 // Aggiungere la visualizzazione di tutte le thumbnails sulla destra dell’immagine grande attiva, come nello screenshot proposto. Tutte le miniature avranno un layer di opacità scura, tranne quella corrispondente all’immagine attiva, che invece avrà un bordo colorato.
 // Al click delle frecce, oltre al cambio di immagine attiva, gestire il cambio di miniatura attiva.
+
+
+const path = "./assets/consegna/img/"
+
+let images = [
+    '01.webp',//0
+    '02.webp',//1
+    '03.webp',//2
+    '04.webp',//3
+    '05.webp'//4
+
+]
+
+const imaginePrincipale = document.querySelector('.items');
+const imaginiThumbs = document.querySelector('.thumbs')
+
+console.log( imaginiThumbs, imaginePrincipale)
+
+for( let i = 0; i < images.length; i++){
+
+    imaginePrincipale.innerHTML += `
+    <div class="item">
+        <img src="${path}${images[i]}" alt="">
+    </div>
+    `
+
+    imaginiThumbs.innerHTML += `
+    <div class="thumb">
+        <img src="${path}${images[i]}" alt="">
+    </div>
+    `
+}
+
+let active = 0
+imaginePrincipale.getElementsByClassName('item')[active].classList.add('active')
+imaginiThumbs.getElementsByClassName('thumb') [active].classList.add('active')
+
+const prev = document.querySelector('.prev')
+prev.addEventListener('click', function(){
+
+    if(active = 0){
+        active = images.length - 1
+    }else{
+        active--;
+    }
+
+    document.querySelector('.item .active').classList.remove('active')
+    imaginePrincipale.getElementsByClassName('item')[active].classList.add('active')
+
+    document.querySelector('.thumb .active').classList.remove('active')
+    imaginePrincipale.getElementsByClassName('thumb')[active].classList.add('active')
+
+
+
+})
